@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+
+@model TaskManagerApp.Controllers.TaskViewModel
+
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>
+
+
+@{
+    for(int i = 0; i<@Model.Count; i++){
+        @:<div>@Model.Name[i]</div>   
+    }
+
+}
+
+
+<form method="post" action="/home/about">
+
+             <div>
+            <label for="CompanyName">Company Name:</label>
+            <input type="text" name="CompanyName" value="" />
+          </div>
+    <input type="submit" value="Add"/>
+    
+</form>
